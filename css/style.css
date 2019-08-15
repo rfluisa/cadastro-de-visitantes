@@ -34,13 +34,23 @@ nav {
   padding: 1rem;
   box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.2); }
   nav div img {
-    height: auto;
-    max-width: 100%;
     max-height: 80px; }
   nav .links {
     display: flex; }
     nav .links a {
       display: block;
       padding: 1rem; }
+
+h1 {
+  padding-top: 10rem;
+  text-align: center; }
+
+.form {
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .form input {
+    margin: 0.3rem; }
 
 /*# sourceMappingURL=style.css.map */

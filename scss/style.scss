@@ -38,8 +38,6 @@ nav{
 
     div{
         img{
-            height: auto;
-            max-width: 100%;
             max-height: 80px;
         }
     }
@@ -51,5 +49,21 @@ nav{
             display: block;
             padding: 1rem;
         }
+    }
+}
+
+h1{
+    padding-top: 10rem;
+    text-align: center;
+}
+
+.form{
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    input{
+        margin: 0.3rem;
     }
 }
