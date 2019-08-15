@@ -1,44 +1,46 @@
 /*CSS RESET*/
 html {
-    box-sizing: border-box;
-    font-size: 16px;
-}
+  box-sizing: border-box;
+  font-size: 16px; }
+
 body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-}
+  margin: 0;
+  padding: 0;
+  font-weight: normal; }
+
 img {
-    max-width: 100%;
-    height: auto;
-}
-ol, ul {list-style: none;}
-*, *:before, *:after {box-sizing: inherit;}
+  max-width: 100%;
+  height: auto; }
+
+ol, ul {
+  list-style: none; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
 /*CSS RESET*/
+/*VARIABLES*/
+/*VARIABLES*/
+body {
+  background-color: white; }
 
+nav {
+  background-color: white;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.2); }
+  nav div img {
+    height: auto;
+    max-width: 100%;
+    max-height: 80px; }
+  nav .links {
+    display: flex; }
+    nav .links a {
+      display: block;
+      padding: 1rem; }
 
-
-
-body{
-    background-color: white;
-}
-
-nav{
-    background-color: white;
-    display: flex;
-    position: fixed;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    box-shadow: 1px 3px 2px rgba(0,0,0,0.2);
-}
-
-.links{
-    display: flex;
-}
-
-.links a{
-    display: block;
-    padding: 1rem;
-}
+/*# sourceMappingURL=style.css.map */
