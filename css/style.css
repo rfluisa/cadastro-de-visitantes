@@ -21,6 +21,9 @@ ol, ul {
 /*CSS RESET*/
 /*VARIABLES*/
 /*VARIABLES*/
+html {
+  font-family: 'Fira Sans Condensed', sans-serif; }
+
 body {
   background-color: white; }
 
