@@ -19,9 +19,24 @@
     </nav>
     <h1>Controle de Visitantes</h1>
     <div class="form">
-        <input type="text" placeholder="Usuário">
-        <input type="text" placeholder="Senha">
-        <button>Entrar</button>
+        <form action="">
+            <div class="item">
+                <label for="user">Tipo de Acesso</label>
+                <select name="usuario" id="user">
+                    <option value="adm">Admin</option>
+                    <option value="basic">Visualizar</option>
+                </select>
+            </div>
+            <div class="item">
+                <label for="username">Usuário</label>
+                <input type="text" placeholder="Usuário" id="username">
+            </div>
+            <div class="item">
+                <label for="pwd">Senha</label>
+                <input type="password" placeholder="Senha" id="pwd">
+            </div>
+            <button>Entrar</button>
+        </form>
     </div>
 </body>
 </html>
