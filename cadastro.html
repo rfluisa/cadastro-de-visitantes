@@ -17,6 +17,32 @@
             <li><a href="#">Sair</a></li><!--Sair-->
         </ul>
     </nav>
-    <h1>Controle de Visitantes</h1>
+    <h1>Cadastro</h1>
+    <div class="form-cadastro">
+        <form action="">
+            <div class="item">
+                    <input type="radio" name="cpf-cnpj" value="CPF">CPF
+                    <input type="radio" name="cpf-cnpj" value="CNPJ"> CNPJ
+                    <br>
+                    <input type="text" placeholder="000.000.000-00" id="cpf-cnpj">
+            </div>
+            <div class="item">
+                <label for="nome">Nome</label><br><!--Nome-->
+                <input type="text" placeholder="Maria da Silva" id="nome">
+            </div>
+            <div class="item">
+                <label for="sexo">Sexo</label><!--sexo-->
+                <br>
+                <input type="radio" name="sexo" value="masculino"> Masculino
+                <input type="radio" name="sexo" value="feminino"> Feminino
+                <input type="radio" name="sexo" value="outro"> Outro
+            </div>
+            <div class="item">
+                    <label for="telefone">Telefone</label><br><!--Phone-->
+                    <input type="text" placeholder="(15) 9 9876-6789" id="telefone">
+                </div>
+            <button>Salvar</button>
+        </form>
+    </div>
 </body>
 </html>
