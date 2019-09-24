@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="jquery-3.4.1.min.js"></script>
     <title>Controle de Visitantes - Entrar</title>
 </head>
 <body>
@@ -35,8 +36,17 @@
                 <label for="pwd">Senha</label>
                 <input type="password" placeholder="Senha" id="pwd">
             </div>
-            <button>Entrar</button>
+            <button id="Save">Entrar</button>
         </form>
     </div>
 </body>
+<script>
+
+document.getElementById("Save").addEventListener('click',function ()
+{
+    $.post( "ajax/test.html",{"usuario": $('#username').val(), "senha": $('#pwd').val(), "tipo": $('user').val()} ,function( data ) {
+    $( ".result" ).html( data );
+    });  
+}); 
+</script>
 </html>

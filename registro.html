@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="jquery-3.4.1.min.js"></script>
     <title>Controle de Visitantes - Registro</title>
 </head>
 <body>
@@ -34,8 +35,16 @@
                     <option value="novo-carro">Novo</option>
                 </select>
             </div>
-            <button>Salvar</button>
+            <button id="Save">Salvar</button>
         </form>
     </div>
 </body>
+<script>
+        document.getElementById("Save").addEventListener('click',function ()
+        {
+            $.post("ajax/test.html", function() {
+            $( ".result" ).html();
+            });  
+        });
+        </script>
 </html>
