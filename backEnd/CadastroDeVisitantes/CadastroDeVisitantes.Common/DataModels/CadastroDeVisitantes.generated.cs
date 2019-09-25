@@ -17,27 +17,28 @@ using LinqToDB.Mapping;
 namespace DataModels
 {
 	/// <summary>
-	/// Database       : CadastroVistantes
-	/// Data Source    : LAPTOP-RG5S275I
-	/// Server Version : 14.00.1000
+	/// Database       : CadastroDeVisitantes
+	/// Data Source    : tcp:cadastrodevisitantes.database.windows.net,1433
+	/// Server Version : 12.00.1800
 	/// </summary>
-	public partial class CadastroVistantesDB : LinqToDB.Data.DataConnection
+	public partial class CadastroDeVisitantesDB : LinqToDB.Data.DataConnection
 	{
-		public ITable<Carro>    Carros   { get { return this.GetTable<Carro>(); } }
-		public ITable<Pessoa>   Pessoas   { get { return this.GetTable<Pessoa>(); } }
-		public ITable<Setor>    Setores    { get { return this.GetTable<Setor>(); } }
-		public ITable<Usuario>  Usuarios  { get { return this.GetTable<Usuario>(); } }
-		public ITable<Veiculo>  VeiculoTable { get { return this.GetTable<Veiculo>(); } }
-		public ITable<Veiculos> VeiculosTable  { get { return this.GetTable<Veiculos>(); } }
-		public ITable<Visita>   Visitas   { get { return this.GetTable<Visita>(); } }
+		public ITable<Carro>                Carroes               { get { return this.GetTable<Carro>(); } }
+		public ITable<DatabaseFirewallRule> DatabaseFirewallRules { get { return this.GetTable<DatabaseFirewallRule>(); } }
+		public ITable<Pessoa>               Pessoas               { get { return this.GetTable<Pessoa>(); } }
+		public ITable<Setor>                Setors                { get { return this.GetTable<Setor>(); } }
+		public ITable<Usuario>              Usuarios              { get { return this.GetTable<Usuario>(); } }
+		public ITable<Veiculo>              Veiculoes             { get { return this.GetTable<Veiculo>(); } }
+		public ITable<VeiculoPessoa>        VeiculoPessoas        { get { return this.GetTable<VeiculoPessoa>(); } }
+		public ITable<Visita>               Visitas               { get { return this.GetTable<Visita>(); } }
 
-		public CadastroVistantesDB()
+		public CadastroDeVisitantesDB()
 		{
 			InitDataContext();
 			InitMappingSchema();
 		}
 
-		public CadastroVistantesDB(string configuration)
+		public CadastroDeVisitantesDB(string configuration)
 			: base(configuration)
 		{
 			InitDataContext();
@@ -66,6 +67,17 @@ namespace DataModels
 		#endregion
 	}
 
+	[Table(Schema="sys", Name="database_firewall_rules", IsView=true)]
+	public partial class DatabaseFirewallRule
+	{
+		[Column("id"),               Identity] public int      Id             { get; set; } // int
+		[Column("name"),             NotNull ] public string   Name           { get; set; } // nvarchar(128)
+		[Column("start_ip_address"), NotNull ] public string   StartIpAddress { get; set; } // varchar(45)
+		[Column("end_ip_address"),   NotNull ] public string   EndIpAddress   { get; set; } // varchar(45)
+		[Column("create_date"),      NotNull ] public DateTime CreateDate     { get; set; } // datetime
+		[Column("modify_date"),      NotNull ] public DateTime ModifyDate     { get; set; } // datetime
+	}
+
 	[Table(Schema="dbo", Name="Pessoa")]
 	public partial class Pessoa
 	{
@@ -81,7 +93,7 @@ namespace DataModels
 		/// FK_VEICULOS_PESSOA_BackReference
 		/// </summary>
 		[Association(ThisKey="IDPessoa", OtherKey="IDPessoa", CanBeNull=true, Relationship=Relationship.OneToMany, IsBackReference=true)]
-		public IEnumerable<Veiculos> Veiculospessoas { get; set; }
+		public IEnumerable<VeiculoPessoa> Veiculospessoas { get; set; }
 
 		/// <summary>
 		/// FK_VISITA_PESSOA_BackReference
@@ -113,10 +125,10 @@ namespace DataModels
 	[Table(Schema="dbo", Name="Usuario")]
 	public partial class Usuario
 	{
-		[Column(),          PrimaryKey, Identity] public int    IDUsuario      { get; set; } // int
-		[Column("Usuario"), NotNull             ] public string Usuario_Column { get; set; } // varchar(50)
-		[Column(),          NotNull             ] public string Senha          { get; set; } // varchar(100)
-		[Column(),          NotNull             ] public int    Tipo           { get; set; } // int
+		[PrimaryKey, Identity] public int    IDUsuario   { get; set; } // int
+		[Column,     NotNull ] public string NomeUsuario { get; set; } // varchar(50)
+		[Column,     NotNull ] public string Senha       { get; set; } // varchar(100)
+		[Column,     NotNull ] public string Tipo        { get; set; } // varchar(25)
 	}
 
 	[Table(Schema="dbo", Name="Veiculo")]
@@ -139,7 +151,7 @@ namespace DataModels
 		/// FK_VEICULOS_VEICULO_BackReference
 		/// </summary>
 		[Association(ThisKey="IDVeiculo", OtherKey="IDVeiculo", CanBeNull=true, Relationship=Relationship.OneToMany, IsBackReference=true)]
-		public IEnumerable<Veiculos> Veiculosveiculoes { get; set; }
+		public IEnumerable<VeiculoPessoa> Veiculosveiculoes { get; set; }
 
 		/// <summary>
 		/// FK_VISITA_VEICULO_BackReference
@@ -150,8 +162,8 @@ namespace DataModels
 		#endregion
 	}
 
-	[Table(Schema="dbo", Name="Veiculos")]
-	public partial class Veiculos
+	[Table(Schema="dbo", Name="VeiculoPessoa")]
+	public partial class VeiculoPessoa
 	{
 		[PrimaryKey(1), NotNull] public int IDVeiculo { get; set; } // int
 		[PrimaryKey(2), NotNull] public int IDPessoa  { get; set; } // int
@@ -237,7 +249,7 @@ namespace DataModels
 				t.IDVeiculo == IDVeiculo);
 		}
 
-		public static Veiculos Find(this ITable<Veiculos> table, int IDVeiculo, int IDPessoa)
+		public static VeiculoPessoa Find(this ITable<VeiculoPessoa> table, int IDVeiculo, int IDPessoa)
 		{
 			return table.FirstOrDefault(t =>
 				t.IDVeiculo == IDVeiculo &&

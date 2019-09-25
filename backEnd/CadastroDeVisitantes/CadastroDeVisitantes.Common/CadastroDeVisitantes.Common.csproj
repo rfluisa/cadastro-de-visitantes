@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataModels\CadastroDeVisitantes1.generated.cs">
+    <Compile Include="DataModels\CadastroDeVisitantes.generated.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CadastroDeVisitantes.tt</DependentUpon>
@@ -80,7 +80,7 @@
   <ItemGroup>
     <Content Include="DataModels\CadastroDeVisitantes.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CadastroDeVisitantes1.generated.cs</LastGenOutput>
+      <LastGenOutput>CadastroDeVisitantes.generated.cs</LastGenOutput>
     </Content>
     <Content Include="LinqToDB.Templates\CopyMe.SqlServer.tt.txt" />
   </ItemGroup>
