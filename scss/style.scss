@@ -83,3 +83,16 @@ h1{
         margin: 0.3rem 0.3rem 0.3rem 0rem;
     }
 }
+
+.tabelaUsuarios{
+    margin: 0 auto;
+    position: relative;
+    background-color: rgba(0,0,0,0.05);
+    width: 80%;
+    padding: 2rem;
+    thead{
+        th{
+            padding: 1rem;
+        }
+    }
+}
