@@ -84,15 +84,23 @@ h1{
     }
 }
 
+#updateUsers{
+    margin: 0.5rem;
+    position: relative;
+}
+
 .tabelaUsuarios{
     margin: 0 auto;
     position: relative;
     background-color: rgba(0,0,0,0.05);
     width: 80%;
     padding: 2rem;
-    thead{
-        th{
-            padding: 1rem;
-        }
+
+    th, td{
+        display: inline-block;
+        padding: 1rem;
+        text-align: center;
+        width: 50%;
     }
+
 }
