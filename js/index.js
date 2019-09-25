@@ -10,7 +10,11 @@ function cadastrar(){
 function login(){
     $.post("https://localhost:44337/api/values/login",{"usuario": $('#username').val(), 
      "senha": $('#pwd').val()} ,function( data ) {
-     $( ".result" ).html( data );
+     if(data){
+        window.location("historico.html");
+     }else{
+         alert("USUARIO INVALIDO");
+     }
     });
 }
 
@@ -29,5 +33,20 @@ function updateUsers(){
             html += '<td>'+e.Tipo+'</td></tr>';
         }
         $("#bodyUsers").append(html);
+    });
+}
+
+function changePassword(){
+    $.post("https://localhost:44337/api/values/updateUsuario",{"usuario": $('#username').val(), 
+     "senha": $('#pwd').val()} ,function( data ) {
+     $( ".result" ).html( data );
+    });
+}
+
+
+function deleteUser(){
+    $.post("https://localhost:44337/api/values/deleteUsuario",{"usuario": $('#username').val(), 
+     "senha": $('#pwd').val()} ,function( data ) {
+     $( ".result" ).html( data );
     });
 }

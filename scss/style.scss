@@ -85,8 +85,9 @@ h1{
 }
 
 #updateUsers{
-    margin: 0.5rem;
-    position: relative;
+    margin-right: 0.5rem;
+    position: fixed;
+    right: 0;
 }
 
 .tabelaUsuarios{
@@ -95,6 +96,7 @@ h1{
     background-color: rgba(0,0,0,0.05);
     width: 80%;
     padding: 2rem;
+    margin-bottom: 2rem;
 
     th, td{
         display: inline-block;

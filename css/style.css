@@ -68,15 +68,17 @@ h1 {
     margin: 0.3rem 0.3rem 0.3rem 0rem; }
 
 #updateUsers {
-  margin: 0.5rem;
-  position: relative; }
+  margin-right: 0.5rem;
+  position: fixed;
+  right: 0; }
 
 .tabelaUsuarios {
   margin: 0 auto;
   position: relative;
   background-color: rgba(0, 0, 0, 0.05);
   width: 80%;
-  padding: 2rem; }
+  padding: 2rem;
+  margin-bottom: 2rem; }
   .tabelaUsuarios th, .tabelaUsuarios td {
     display: inline-block;
     padding: 1rem;

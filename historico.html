@@ -20,9 +20,7 @@
     </nav>
     <h1>Controle de Visitantes</h1>
     <!--<a href="dashboard.html">Relatórios</a>-->
-    <button id="updateUsers" onclick="updateUsers()">Atualizar usuário</button><br>
-    <button id="updateUsers" onclick="updateUsers()">Remover usuário</button><br>
-    <button id="updateUsers" onclick="updateUsers()">Reload usuários</button><br>
+    <button id="updateUsers" onclick="updateUsers()">Reload usuários</button>
     <table class="tabelaUsuarios">
         <thead>
             <tr>
@@ -31,10 +29,22 @@
             </tr>
         </thead>
         <tbody id="bodyUsers">
-            <tr><td>teste</td><td>teste</td></tr>
-            <tr><td>teste</td><td>teste</td></td></tr>
         </tbody>
     </table>
+
+    <div class="form">
+        <div class="item">
+            <label for="username">Usuário</label>
+            <input type="text" placeholder="Usuário" id="username">
+        </div>
+        <div class="item">
+            <label for="pwd">Senha</label>
+            <input type="password" placeholder="Senha" id="pwd">
+        </div>
+        <button onclick="changePassword()">Update</button><br>
+        <button onclick="deleteUser()">Delete</button>
+    
+    </div>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
