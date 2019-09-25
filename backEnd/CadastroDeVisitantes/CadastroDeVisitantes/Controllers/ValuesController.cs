@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CadastroDeVisitantes.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,7 +11,7 @@ namespace CadastroDeVisitantes.Controllers
     public class ValuesController : ApiController
     {
         [HttpPost]
-        public void Login()
+        public void Login(LoginViewModel Usuario)
         {
 
         }
