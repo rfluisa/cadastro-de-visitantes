@@ -15,7 +15,8 @@ namespace CadastroDeVisitantes.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ValuesController : ApiController
     {
-        
+
+        [HttpPost]
         public bool Login(LoginViewModel usuario)
         {
             try
@@ -34,13 +35,13 @@ namespace CadastroDeVisitantes.Controllers
             }
         }
 
-
+        [HttpPost]
         public void Cadastro(CadastroPessoaViewModel Cadastro)
         {
 
         }
 
-
+        [HttpPost]
         public JsonResult<bool> CadastroUsuario(Usuario usuario)
         {
             try
@@ -63,7 +64,7 @@ namespace CadastroDeVisitantes.Controllers
 
         }
 
-
+        [HttpPost]
         public List<Usuario> ReadUsuarios()
         {
             try
@@ -80,6 +81,7 @@ namespace CadastroDeVisitantes.Controllers
             }
         }
 
+        [HttpPost]
         public JsonResult<bool> UpdateUsuario(Usuario usuario)
         {
             try
@@ -102,7 +104,7 @@ namespace CadastroDeVisitantes.Controllers
             }
         }
 
-
+        [HttpPost]
         public JsonResult<bool> DeleteUsuario(Usuario usuario)
         {
             try
