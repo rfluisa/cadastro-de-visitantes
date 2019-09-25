@@ -20,14 +20,6 @@
     </nav>
     <h1>Controle de Visitantes</h1>
     <div class="form-login">
-        
-        <div class="item">
-            <label for="user">Tipo de Acesso</label>
-            <select name="usuario" id="user">
-                <option value="adm">Admin</option>
-                <option value="basic">Visualizar</option>
-            </select>
-        </div>
         <div class="item">
             <label for="username">Usuário</label>
             <input type="text" placeholder="Usuário" id="username">
@@ -36,17 +28,9 @@
             <label for="pwd">Senha</label>
             <input type="password" placeholder="Senha" id="pwd">
         </div>
-        <button id="Save">Entrar</button>
+        <button id="Save" onclick="login()">Entrar</button>
     
     </div>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
-<script>
-
-document.getElementById("Save").addEventListener('click',function ()
-{
-    $.post( "https://localhost:44337/api/values/login",{"usuario": $('#username').val(), "senha": $('#pwd').val(), "tipo": $('user').val()} ,function( data ) {
-    $( ".result" ).html( data );
-    });  
-}); 
-</script>
 </html>

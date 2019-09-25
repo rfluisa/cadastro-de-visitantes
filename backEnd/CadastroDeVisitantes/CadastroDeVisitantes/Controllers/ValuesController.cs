@@ -17,7 +17,7 @@ namespace CadastroDeVisitantes.Controllers
         }
 
         [HttpPost]
-        public void test2()
+        public void Cadastro(CadastroViewModel Cadastro)
         {
 
         }

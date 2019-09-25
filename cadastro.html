@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Controle de Visitantes - Cadastro</title>
 </head>
 <body>
@@ -20,33 +20,32 @@
     </nav>
     <h1>Cadastro</h1>
     <div class="form-cadastro">
-        <form action="">
-            <div class="item">
-                    <input type="radio" name="cpf-cnpj" value="CPF">CPF
-                    <input type="radio" name="cpf-cnpj" value="CNPJ"> CNPJ
-                    <br>
-                    <input type="text" placeholder="000.000.000-00" id="cpf-cnpj">
-            </div>
-            <div class="item">
-                <label for="nome">Nome</label><br><!--Nome-->
-                <input type="text" placeholder="Maria da Silva" id="nome">
-            </div>
-            <div class="item">
-                <label for="sexo">Sexo</label><!--sexo-->
+        <div class="item">
+                <input type="radio" name="cpf-cnpj" value="CPF" id="cpfBool">CPF
+                <input type="radio" name="cpf-cnpj" value="CNPJ"> CNPJ
                 <br>
-                <input type="radio" name="sexo" value="masculino" id="m"> Masculino
-                <input type="radio" name="sexo" value="feminino" id="f"> Feminino
-                <input type="radio" name="sexo" value="outro" id="o"> Outro
+                <input type="text" placeholder="000.000.000-00" id="cpf-cnpj">
+        </div>
+        <div class="item">
+            <label for="nome">Nome</label><br><!--Nome-->
+            <input type="text" placeholder="Maria da Silva" id="nome">
+        </div>
+        <div class="item">
+            <label for="sexo">Sexo</label><!--sexo-->
+            <br>
+            <input type="radio" name="sexo" value="masculino" id="m"> Masculino
+            <input type="radio" name="sexo" value="feminino" id="f"> Feminino
+            <input type="radio" name="sexo" value="outro" id="o"> Outro
+        </div>
+        <div class="item">
+                <label for="telefone">Telefone</label><br><!--Phone-->
+                <input type="text" placeholder="(15) 9 9876-6789" id="telefone">
             </div>
-            <div class="item">
-                    <label for="telefone">Telefone</label><br><!--Phone-->
-                    <input type="text" placeholder="(15) 9 9876-6789" id="telefone">
-                </div>
-            <button id="Save">Salvar</button>
-        </form>
+        <button id="SaveCadastro" onclick="cadastrar()">Salvar</button>
     </div>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
-<script>
+<!--<script>
 document.getElementById("Save").addEventListener('click',function ()
 {
     $.post( "ajax/test.html",{"cpfcnpj": $('#cpf-cnpj').val(), "nome": $('#nome').val(), 
@@ -55,5 +54,5 @@ document.getElementById("Save").addEventListener('click',function ()
     $( ".result" ).html( data );
     });  
 });
-</script>
+</script>-->
 </html>
