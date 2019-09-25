@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CadastroDeVisitantes.Models
 {
-    public class CadastroViewModel
+    public class CadastroPessoaViewModel
     {
         public bool CpfCnpj { get; set; }//true = cpf, false = cnpj
         public string Cpf { get; set; }

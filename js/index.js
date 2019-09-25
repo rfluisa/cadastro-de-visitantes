@@ -22,11 +22,11 @@ function cadastrarUsuario(){
 }
 
 function updateUsers(){
-    $.post("https://localhost:44337/api/values/readUsuarios",function( data ) {
+    $.post("https://localhost:44337/api/values/readusuarios",function( data ) {
         var html = '';    
         for (e in data){
-            html += '<tr><td>'+e.NomeUsuario+'</td>';
-            html += '<td>'+e.Tipo+'</td></tr>';
+            html += '<tr><td>'+data[e].NomeUsuario+'</td>';
+            html += '<td>'+data[e].Tipo+'</td></tr>';
         }
         $("#bodyUsers").append(html);
     });

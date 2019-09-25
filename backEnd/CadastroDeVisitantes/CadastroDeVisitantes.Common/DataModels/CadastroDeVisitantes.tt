@@ -18,8 +18,8 @@
 		3. Add connection string to the web/app.config file:
 
 			<connectionStrings>
-				<add name="Default" providerName="System.Data.SqlClient"
-					connectionString="Data Source=LAPTOP-RG5S275I;Database=CadastroVistantes;" />
+				<add name="CadastroDeVisitantes" providerName="System.Data.SqlClient"
+					connectionString="Data Source=tcp:cadastrodevisitantes.database.windows.net,1433;Database=CadastroDeVisitantes;User Id=cadastrodevisitantes;Password=projeto@WEB;" />
 			</connectionStrings>
 
 		4. To access your database use the following code:
@@ -48,8 +48,8 @@
 
 	NamespaceName = "DataModels";
 
-//	LoadSqlServerMetadata("MyServer", "MyDatabase", "User", "Password");
-	LoadSqlServerMetadata("LAPTOP-RG5S275I", "CadastroVistantes"); // Integrated Security
+	LoadSqlServerMetadata("tcp:cadastrodevisitantes.database.windows.net,1433", "CadastroDeVisitantes", "cadastrodevisitantes", "projeto@WEB");
+//	LoadSqlServerMetadata(".", "MyDatabase"); // Integrated Security
 //	LoadSqlServerMetadata(string connectionString);
 
 	GenerateModel();
