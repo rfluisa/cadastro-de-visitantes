@@ -14,6 +14,11 @@ img {
 }
 ol, ul {list-style: none;}
 *, *:before, *:after {box-sizing: inherit;}
+
+a, u {
+    text-decoration: none;
+    color: black;
+}
 /*CSS RESET*/
 
 /*VARIABLES*/
@@ -60,23 +65,20 @@ h1{
     text-align: center;
 }
 
-.form-login, .form-cadastro, .form-registro{
+.form{
     margin: 0 auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: rgba(0,0,0,0.05);
     width: 30%;
-
-    form{
-        padding: 2rem;
-    }
+    padding: 2rem;
 
     .item, button, p{
         width: 100%;
         margin-top: 0.5rem;
     }
-    input[type=text], select{
+    input[type=text], input[type=password], select{
         width: 100%;
         margin: 0.3rem 0.3rem 0.3rem 0rem;
     }

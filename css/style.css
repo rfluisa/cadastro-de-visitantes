@@ -18,6 +18,10 @@ ol, ul {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+a, u {
+  text-decoration: none;
+  color: black; }
+
 /*CSS RESET*/
 /*VARIABLES*/
 /*VARIABLES*/
@@ -48,19 +52,18 @@ h1 {
   padding: 10rem 0rem 2.5rem 0rem;
   text-align: center; }
 
-.form-login, .form-cadastro, .form-registro {
+.form {
   margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.05);
-  width: 30%; }
-  .form-login form, .form-cadastro form, .form-registro form {
-    padding: 2rem; }
-  .form-login .item, .form-login button, .form-login p, .form-cadastro .item, .form-cadastro button, .form-cadastro p, .form-registro .item, .form-registro button, .form-registro p {
+  width: 30%;
+  padding: 2rem; }
+  .form .item, .form button, .form p {
     width: 100%;
     margin-top: 0.5rem; }
-  .form-login input[type=text], .form-login select, .form-cadastro input[type=text], .form-cadastro select, .form-registro input[type=text], .form-registro select {
+  .form input[type=text], .form input[type=password], .form select {
     width: 100%;
     margin: 0.3rem 0.3rem 0.3rem 0rem; }
 
