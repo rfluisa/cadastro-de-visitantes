@@ -20,3 +20,14 @@ function cadastrarUsuario(){
      $( ".result" ).html( data );
     });
 }
+
+function updateUsers(){
+    $.post("https://localhost:44337/api/values/readUsuarios",function( data ) {
+        var html = '';    
+        for (e in data){
+            html += '<tr><td>'+e.NomeUsuario+'</td>';
+            html += '<td>'+e.Tipo+'</td></tr>';
+        }
+        $("#bodyUsers").append(html);
+    });
+}
