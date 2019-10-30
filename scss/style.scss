@@ -1,3 +1,14 @@
+/*VARIABLES*/
+$bg-colour: white;
+$header-colour: $bg-colour;
+$facens-colour: #0878BB;
+$brand-color: $facens-colour;
+/*VARIABLES*/
+
+/*IMPORTS*/
+@import "./mustard-ui-master/src/scss/mustard-ui.scss";
+/*IMPORTS*/
+
 /*CSS RESET*/
 html {
     box-sizing: border-box;
@@ -21,13 +32,8 @@ a, u {
 }
 /*CSS RESET*/
 
-/*VARIABLES*/
-$bg-colour: white;
-$header-colour: $bg-colour;
-/*VARIABLES*/
-
-html{
-    font-family: 'Fira Sans Condensed', sans-serif;
+html {
+    font-family: 'Fira Sans Condensed', sans-serif;   
 }
 
 body{
@@ -35,6 +41,7 @@ body{
 }
 
 nav{
+    height: 5rem;
     background-color: $header-colour;
     display: flex;
     position: fixed;
