@@ -3,6 +3,7 @@ $bg-colour: white;
 $header-colour: $bg-colour;
 $facens-colour: #0878BB;
 $brand-color: $facens-colour;
+$transparent-black: rgba(0,0,0,0.05);
 /*VARIABLES*/
 
 /*IMPORTS*/
@@ -74,10 +75,11 @@ h1{
 
 .form{
     margin: 0 auto;
+    margin-bottom: 2%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(0,0,0,0.05);
+    background-color: $transparent-black;
     width: 30%;
     padding: 2rem;
 
@@ -91,17 +93,16 @@ h1{
     }
 }
 
-#updateUsers{
-    margin-right: 0.5rem;
-    position: fixed;
-    right: 0;
+.form.usuarios, #updateUsers{
+    margin-left: 10%;
 }
 
 .tabelaUsuarios{
     margin: 0 auto;
     position: relative;
-    background-color: rgba(0,0,0,0.05);
+    background-color: $transparent-black;
     width: 80%;
+    margin-top: 2.5rem;
     padding: 2rem;
     margin-bottom: 2rem;
 
@@ -112,4 +113,8 @@ h1{
         width: 50%;
     }
 
+}
+
+.locais{
+    display: none;
 }

@@ -12,7 +12,7 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
-    <title>Controle de Visitantes - Entrar</title>
+    <title>Controle de Visitantes - Histórico</title>
 </head>
 <body>
     <nav>
@@ -23,15 +23,22 @@
             <li><a href="#">Sair</a></li><!--Sair-->
         </ul>
     </nav>
-    <h1>Controle de Visitantes</h1>
-    <div class="form">
-        <div class="item" id="tipo">
-            <label for="tipoUsuario">Tipo</label>
-            <select id="tipoUsuario">
-                <option value="administrador">Administrador</option>
-                <option value="funcionario">Funcionário</option>
-            </select>
-        </div>
+    <h1>Usuários</h1>
+    <div>
+        <button id="updateUsers" onclick="updateUsers()">Reload usuários</button>
+        <table class="tabelaUsuarios">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                </tr>
+            </thead>
+            <tbody id="bodyUsers">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="form usuarios">
         <div class="item">
             <label for="username">Usuário</label>
             <input type="text" placeholder="Usuário" id="username">
@@ -40,7 +47,10 @@
             <label for="pwd">Senha</label>
             <input type="password" placeholder="Senha" id="pwd">
         </div>
-        <button class="button-primary" id="Save" onclick="cadastrarUsuario()">Entrar</button>
+        <br>
+        <button id="NovoUsuario" class="button-primary">Novo Usuário</button>
+        <button onclick="changePassword()" class="button-primary">Atualizar</button>
+        <button onclick="deleteUser()" class="button-primary">Deletar</button>
     
     </div>
     <script type="text/javascript" src="js/index.js"></script>

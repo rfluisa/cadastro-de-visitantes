@@ -25,6 +25,13 @@
     </nav>
     <h1>Controle de Visitantes</h1>
     <div class="form">
+        <div class="item" id="tipo">
+            <label for="tipoUsuario">Tipo</label>
+            <select id="tipoUsuario">
+                <option value="administrador">Administrador</option>
+                <option value="funcionario">Funcionário</option>
+            </select>
+        </div>
         <div class="item">
             <label for="username">Usuário</label>
             <input type="text" placeholder="Usuário" id="username">
@@ -33,8 +40,7 @@
             <label for="pwd">Senha</label>
             <input type="password" placeholder="Senha" id="pwd">
         </div>
-        <button id="Save" onclick="login()" class="button-primary">Entrar</button>
-        <button id="NovoUsuario" class="button-primary">Novo Usuário</button>
+        <button class="button-primary" id="Save" onclick="cadastrarUsuario()">Entrar</button>
     
     </div>
     <script type="text/javascript" src="js/index.js"></script>

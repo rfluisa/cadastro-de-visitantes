@@ -1453,6 +1453,7 @@ h1 {
 
 .form {
   margin: 0 auto;
+  margin-bottom: 2%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -1466,16 +1467,15 @@ h1 {
     width: 100%;
     margin: 0.3rem 0.3rem 0.3rem 0rem; }
 
-#updateUsers {
-  margin-right: 0.5rem;
-  position: fixed;
-  right: 0; }
+.form.usuarios, #updateUsers {
+  margin-left: 10%; }
 
 .tabelaUsuarios {
   margin: 0 auto;
   position: relative;
   background-color: rgba(0, 0, 0, 0.05);
   width: 80%;
+  margin-top: 2.5rem;
   padding: 2rem;
   margin-bottom: 2rem; }
   .tabelaUsuarios th, .tabelaUsuarios td {
@@ -1483,5 +1483,8 @@ h1 {
     padding: 1rem;
     text-align: center;
     width: 50%; }
+
+.locais {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

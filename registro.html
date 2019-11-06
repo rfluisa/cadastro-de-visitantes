@@ -25,21 +25,43 @@
     </nav>
     <h1>Registro</h1>
     <div class="form">
+        <div class="cpf item">
+                <h6>CPF/CNPJ</h6>
+                <input type="text" placeholder="000.000.000-00" id="info"><!--Info vem do back-->
+        </div>
         <div class="nome item">
-            <p>Nome</p>
+            <h6>Nome</h6>
             <p id="info"></p><!--Nome vem do back-->
         </div>
-        <div class="cpf item">
-            <p>CPF/CNPJ</p>
-            <p id="info"></p><!--Info vem do back-->
-        </div>
         <div class="veiculos item">
-            <label for="veiculos">Veículos</label>
+            <h6>Veículos</h6>
             <select id="veiculos">
                 <option value="novo-carro">Novo</option>
             </select>
         </div>
-        <button id="Save" onclick="registrar()">Salvar</button>
+        <div class="setores item">
+            <h6>Setores</h6>
+            <select id="setores">
+                <option value="predio-A">Prédio A</option>
+                <option value="predio-B">Prédio B</option>
+                <option value="predio-C">Prédio C</option>
+                <option value="predio-D">Prédio D</option>
+                <option value="predio-E">Prédio E</option>
+                <option value="predio-F">Prédio F</option>
+                <option value="predio-G">Prédio G</option>
+                <option value="predio-H">Prédio H</option>
+                <option value="predio-I">Prédio I</option>
+                <option value="predio-J">Prédio J</option>
+                <option value="predio-K">Prédio K</option>
+                <option value="predio-L">Prédio L</option>
+            </select>
+            <select id="locais-A" class="locais A">
+                    <option value="FACE">FACE</option>
+                    <option value="LIS">LIS</option>
+                    <option value="SmartCampus">SmartCampus</option>
+            </select>
+        </div>
+        <button id="Save" onclick="registrar()" class="button-primary">Salvar</button>
         <script type="text/javascript" src="js/index.js"></script>
     </div>
 </body>
