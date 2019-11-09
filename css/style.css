@@ -1457,7 +1457,7 @@ h1 {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.15);
   width: 30%;
   padding: 2rem; }
   .form .item, .form button, .form p {
@@ -1473,7 +1473,7 @@ h1 {
 .tabelaUsuarios {
   margin: 0 auto;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.15);
   width: 80%;
   margin-top: 2.5rem;
   padding: 2rem;

@@ -26,7 +26,7 @@
     <h1>Registro</h1>
     <div class="form">
         <div class="cpf item">
-                <h6>CPF/CNPJ</h6>
+                <h6>CPF</h6>
                 <input type="text" placeholder="000.000.000-00" id="info"><!--Info vem do back-->
         </div>
         <div class="nome item">
@@ -36,12 +36,14 @@
         <div class="veiculos item">
             <h6>Veículos</h6>
             <select id="veiculos">
+                <option disabled selected value> -- Selecione uma opção -- </option>
                 <option value="novo-carro">Novo</option>
             </select>
         </div>
         <div class="setores item">
             <h6>Setores</h6>
-            <select id="setores">
+            <select id="predios" onChange="toggleSetores()">
+                <option disabled selected value> -- Selecione uma opção -- </option>
                 <option value="predio-A">Prédio A</option>
                 <option value="predio-B">Prédio B</option>
                 <option value="predio-C">Prédio C</option>
@@ -54,17 +56,94 @@
                 <option value="predio-J">Prédio J</option>
                 <option value="predio-K">Prédio K</option>
                 <option value="predio-L">Prédio L</option>
+                <option value="predio-M">Outros</option>
             </select>
-            <select id="locais-A" class="locais A">
+            <select id="setores-A" class="locais">
                     <option value="FACE">FACE</option>
+                    <option value="LiquidGalaxy">Liquid Galaxy</option>
                     <option value="LIS">LIS</option>
+                    <option value="LabInformatica">Laboratório de Informática</option>
                     <option value="SmartCampus">SmartCampus</option>
+                    <option value="Qualcomm">Qualcomm</option>
+            </select>
+            <select id="setores-B" class="locais">
+                    <option value="LabQuimica">Laboratório de Química</option>
+                    <option value="LabFisica">Laboratório de Física</option>
+                    <option value="LabAlimentos">Laboratório de Alimentos</option>
+            </select>
+            <select id="setores-C" class="locais">
+                    <option value="CantinaC">Cantina</option>
+                    <option value="FabLab">Fab Lab</option>
+                    <option value="Huawei">Huawei</option>
+            </select>
+            <select id="setores-D" class="locais">
+                    <option value="LabEletrica">Laboratório de Elétrica</option>
+                    <option value="LabMecatronica">Laboratório de Mecatrônica</option>
+                    <option value="NRI">NRI - Núcleo de Robótica Inteligente</option>
+            </select>
+            <select id="setores-E" class="locais">
+                    <option value="Administrativo">Administrativo CAAD</option>
+                    <option value="Auditorio">Auditório</option>
+                    <option value="CAS">CAS - Centro de Atendimento Social</option>
+                    <option value="Coordenacao">Coordenação</option>
+                    <option value="Diretoria">Diretoria</option>
+                    <option value="DRI">DRI - Departamento de Relações Internacionais</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Ouvidoria">Ouvidoria</option>
+                    <option value="RH">Recursos Humanos</option>
+                    <option value="Secretaria">Secretaria</option>
+                    <option value="SalaProfessores">Sala dos Professores</option>
+                    <option value="Tesouraria">Tesouraria</option>
+            </select>
+            <select id="setores-F" class="locais">
+                    <option value="Ambulatorio">Ambulatório</option>
+                    <option value="LojaSolidaria">Loja Solidária</option>
+            </select>
+            <select id="setores-G" class="locais">
+                    <option value="Academia">Academia</option>
+                    <option value="Atlética">Atlética</option>
+                    <option value="CantinaG">Cantina</option>
+                    <option value="Ginasio">Ginásio de Esportes</option>
+                    <option value="LINCE">LINCE</option>
+                    <option value="QuadraSintetica">Quadra de Grama Sintética</option>
+            </select>
+            <select id="setores-H" class="locais">
+                    <option value="Biblioteca">Biblioteca</option>
+                    <option value="SalaEstudos">Sala de Estudos</option>
+            </select>
+            <select id="setores-I" class="locais">
+                    <option value="LEMAT">LEMAT</option>
+                    <option value="LabCivilI">Laboratório de Civil</option>
+                    <option value="FacensJr">Facens Júnior</option>
+                    <option value="FacensMusical">Facens Musical</option>
+            </select>
+            <select id="setores-J" class="locais">
+                <option value="Manutencao">Manutenção</option>
+            </select>
+            <select id="setores-K" class="locais">
+                    <option value="IPEAS">IPEAS</option>
+                    <option value="LabMetro">Laboratório de Metereologia</option>
+                    <option value="Slipcenet">Splicenet</option>
+            </select>
+            <select id="setores-L" class="locais">
+                    <option value="CantinaL">Cantina</option>
+                    <option value="LabArquitetura">Laboratório de Arquitetura</option>
+                    <option value="LabCivilL">Laboratório de Civil</option>
+                    <option value="LabManufatura">Laboratório de Manofatura Avançada 4.0</option>
+                    <option value="LabMecanica">Laboratório de Mecânica</option>
+            </select>
+            <select id="setores-M" class="locais">
+                        <option value="CampoFutebol">Campo Oficial de Futebol</option>
+                        <option value="FarmLab">FARM LAB</option>
+                        <option value="Refeitorio">Refeitório</option>
+                        <option value="Outros">Outros</option>
             </select>
         </div>
         <button id="Save" onclick="registrar()" class="button-primary">Salvar</button>
         <script type="text/javascript" src="js/index.js"></script>
     </div>
 </body>
+<script type="text/javascript" src="js/styles.js"></script>
 <script>
         document.getElementById("Save").addEventListener('click',function ()
         {
