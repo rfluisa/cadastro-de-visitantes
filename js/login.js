@@ -11,5 +11,5 @@ function Login() {
         } else {
             alert("USUARIO INVALIDO");
         }
-    });
+    }, false);
 }

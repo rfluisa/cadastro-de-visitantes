@@ -1,4 +1,5 @@
-﻿using CadastroDeVisitantes.Models;
+﻿using CadastroDeVisitantes.Core;
+using CadastroDeVisitantes.Models;
 using DataModels;
 using LinqToDB;
 using System;
@@ -9,6 +10,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Results;
+using System.Web.Security;
 
 namespace CadastroDeVisitantes.Controllers
 {
@@ -23,9 +25,13 @@ namespace CadastroDeVisitantes.Controllers
             {
                 using (var db = new CadastroDeVisitantesDB())
                 {
+                    usuario.Senha = Criptografia.Criptografar(usuario.Senha);
                     var usuariodb = db.Usuarios.FirstOrDefault(user => user.NomeUsuario == usuario.Usuario);
                     if (usuariodb != null && usuariodb.Senha == usuario.Senha)
+                    {
+                        FormsAuthentication.SetAuthCookie(usuario.Usuario,true);
                         return true;
+                    }
                     return false;
                 }
             }
@@ -36,18 +42,21 @@ namespace CadastroDeVisitantes.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public void Cadastro(CadastroPessoaViewModel Cadastro)
         {
 
         }
 
         [HttpPost]
+        [Authorize]
         public JsonResult<bool> CadastroUsuario(Usuario usuario)
         {
             try
             {
                 using (var db = new CadastroDeVisitantesDB())
                 {
+                    usuario.Senha = Criptografia.Criptografar(usuario.Senha);
                     var usuariodb = db.Usuarios.FirstOrDefault(user => user.NomeUsuario == usuario.NomeUsuario);
                     if (usuariodb == null)
                     {
@@ -65,6 +74,7 @@ namespace CadastroDeVisitantes.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public List<Usuario> ReadUsuarios()
         {
             try
@@ -82,6 +92,7 @@ namespace CadastroDeVisitantes.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public JsonResult<bool> UpdateUsuario(Usuario usuario)
         {
             try
@@ -105,6 +116,7 @@ namespace CadastroDeVisitantes.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public JsonResult<bool> DeleteUsuario(Usuario usuario)
         {
             try

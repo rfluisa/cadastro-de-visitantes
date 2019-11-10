@@ -288,6 +288,10 @@
       <Project>{E2015BBE-2006-459B-9FAF-C8C6A7D083AF}</Project>
       <Name>CadastroDeVisitantes.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CadastroDeVisitantes.Core\CadastroDeVisitantes.Core.csproj">
+      <Project>{6DD25BAB-85D6-41FE-871B-D89392EC4B7C}</Project>
+      <Name>CadastroDeVisitantes.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

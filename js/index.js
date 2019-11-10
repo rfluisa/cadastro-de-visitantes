@@ -26,15 +26,22 @@ function cadastrarUsuario(){
 }
 
 function updateUsers(){
-    $.post("https://localhost:44337/api/values/readusuarios",function( data ) {
-        var html = '';    
-        $("#bodyUsers").html(html);
-        for (e in data){
-            html += '<tr><td>'+data[e].NomeUsuario+'</td>';
-            html += '<td>'+data[e].Tipo+'</td></tr>';
+    CommonPost("readusuarios", {}, function (data) {
+        if (data) {
+            window.location = "historico.html";
+        } else {
+            alert("USUARIO INVALIDO");
         }
-        $("#bodyUsers").append(html);
     });
+    // $.post("https://localhost:44337/api/values/readusuarios",function( data ) {
+    //     var html = '';    
+    //     $("#bodyUsers").html(html);
+    //     for (e in data){
+    //         html += '<tr><td>'+data[e].NomeUsuario+'</td>';
+    //         html += '<td>'+data[e].Tipo+'</td></tr>';
+    //     }
+    //     $("#bodyUsers").append(html);
+    // });
 }
 
 function changePassword(){

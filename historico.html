@@ -23,20 +23,19 @@
             <li><a href="#">Sair</a></li><!--Sair-->
         </ul>
     </nav>
-    <h1>Usuários</h1>
-    <div>
-        <button id="updateUsers" onclick="updateUsers()">Reload usuários</button>
-        <table class="tabelaUsuarios">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Tipo</th>
-                </tr>
-            </thead>
-            <tbody id="bodyUsers">
-            </tbody>
-        </table>
-    </div>
+    <h1>Controle de Visitantes</h1>
+    <!--<a href="dashboard.html">Relatórios</a>-->
+    <button id="updateUsers" onclick="LerUsuarios()">Reload usuários</button>
+    <table class="tabelaUsuarios">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody id="bodyUsers">
+        </tbody>
+    </table>
 
     <div class="form usuarios">
         <div class="item">
@@ -49,10 +48,11 @@
         </div>
         <br>
         <button id="NovoUsuario" class="button-primary">Novo Usuário</button>
-        <button onclick="changePassword()" class="button-primary">Atualizar</button>
-        <button onclick="deleteUser()" class="button-primary">Deletar</button>
+        <button onclick="MudarSenharUsuario()" class="button-primary">Atualizar</button>
+        <button onclick="DeletarUsuario()" class="button-primary">Deletar</button>
     
     </div>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/usuarios.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>
