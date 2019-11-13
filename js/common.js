@@ -16,7 +16,7 @@ function checkAuth(){
 
 
 function Logout() {
+    localStorage.setItem("isLogged", 0);
     CommonPost("logout", {}, function () {
-        localStorage.setItem("isLogged", 0);
     });
 }
