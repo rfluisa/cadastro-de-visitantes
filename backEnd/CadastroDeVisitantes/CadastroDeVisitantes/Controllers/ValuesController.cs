@@ -17,6 +17,12 @@ namespace CadastroDeVisitantes.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ValuesController : ApiController
     {
+        [HttpPost]
+        public void Logout()
+        {
+            FormsAuthentication.SignOut();
+        }
+
 
         [HttpPost]
         public bool Login(LoginViewModel usuario)
@@ -32,6 +38,7 @@ namespace CadastroDeVisitantes.Controllers
                         FormsAuthentication.SetAuthCookie(usuario.Usuario,true);
                         return true;
                     }
+                    FormsAuthentication.SignOut();
                     return false;
                 }
             }
