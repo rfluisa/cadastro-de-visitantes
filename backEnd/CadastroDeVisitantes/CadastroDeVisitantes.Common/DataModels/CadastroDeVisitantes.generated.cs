@@ -19,7 +19,7 @@ namespace DataModels
 	/// <summary>
 	/// Database       : CadastroDeVisitantes
 	/// Data Source    : tcp:cadastrodevisitantes.database.windows.net,1433
-	/// Server Version : 12.00.1800
+	/// Server Version : 12.00.1900
 	/// </summary>
 	public partial class CadastroDeVisitantesDB : LinqToDB.Data.DataConnection
 	{

@@ -7,9 +7,10 @@ function Login() {
 
     CommonPost("login", parametros, function (data) {
         if (data) {
+            localStorage.setItem("isLogged", 1);
             window.location = "historico.html";
         } else {
             alert("USUARIO INVALIDO");
         }
-    }, false);
+    });
 }
