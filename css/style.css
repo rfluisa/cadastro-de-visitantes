@@ -1429,6 +1429,9 @@ html {
 body {
   background-color: white; }
 
+::-webkit-scrollbar {
+  display: none; }
+
 nav {
   height: 5rem;
   z-index: 5;
@@ -1500,17 +1503,19 @@ h1 {
   width: 50%; }
 
 .tabelaHistorico th, .tabelaHistorico td {
-  width: 20%; }
+  width: 16.65%; }
 
 .locais, #novo-veiculo-toggle, .veiculos, .setores, .saveReg {
   display: none; }
 
-#pieChartVisitas {
-  min-width: 50vw;
-  height: 100vh;
-  max-width: 100vw;
+#pieChartVisitas, #lineChartVisitasHora {
+  min-width: 100vw;
+  height: 70vh;
   margin: 0 auto;
-  margin-top: 6rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   position: relative; }
+  #pieChartVisitas .highcharts-credits, #lineChartVisitasHora .highcharts-credits {
+    display: none; }
 
 /*# sourceMappingURL=style.css.map */
