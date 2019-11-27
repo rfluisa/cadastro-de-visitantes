@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/solid.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/fontawesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    
+    <title>Controle de Visitantes - Entrar</title>
+</head>
+<body onload="Logout()">
+    <nav>
+        <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
+        <ul class="links">
+            <li><a href="index.html">Home</a></li><!--Início-->
+            <li><a href="historicoVisitas.html">Histórico</a></li><!--Historico---->
+            <li><a href="registro.html">Registrar</a></li><!--Historico---->
+            <li><a href="#">Sair</a></li><!--Sair-->
+        </ul>
+    </nav>
+    <h1>Controle de Visitantes</h1>
+    <div class="form">
+        <div class="item" id="tipo">
+            <label for="tipoUsuario">Tipo</label>
+            <select id="tipoUsuario">
+                <option value="administrador">Administrador</option>
+                <option value="funcionario">Funcionário</option>
+            </select>
+        </div>
+        <div class="item">
+            <label for="username">Usuário</label>
+            <input type="text" placeholder="Usuário" id="username">
+        </div>
+        <div class="item">
+            <label for="pwd">Senha</label>
+            <input type="password" placeholder="Senha" id="pwd">
+        </div>
+        <button class="button-primary" id="Save" onclick="Login()">Entrar</button>
+    
+    </div>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>

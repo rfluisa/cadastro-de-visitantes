@@ -12,9 +12,9 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
-    <title>Controle de Visitantes - Histórico</title>
+    <title>Controle de Visitantes - Cadastro</title>
 </head>
-<body onload="checkAuth()" onunload="Logout()">
+<body onload="checkAuth()">
     <nav>
         <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
         <ul class="links">
@@ -24,25 +24,27 @@
                 <li><a href="#">Sair</a></li><!--Sair-->
         </ul>
     </nav>
-    <h1>Histórico de Visitantes</h1>
-        <div class="center-them">
-            <button id="updateHistorico" class="button-primary left-button" onclick="updateUsers()">Reload Histórico</button>
-            <a class="help" href="dashboard.html"><button id="dashboard" class="button-primary left-button">Dashboard</button></a>
+    <h1>Cadastro</h1>
+    <div class="form">
+        <div class="item">
+                <h6>CPF</h6>
+                <input type="text" placeholder="000.000.000-00" id="cpf-cnpj">
         </div>
-        <table class="tabelaHistorico">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Placa</th>
-                    <th>Entrada</th>
-                    <th>Saída</th>
-                    <th>Setor</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody id="bodyHistory">
-            </tbody>
-        </table>
+        <div class="item">
+            <h6>Nome</h6>
+            <input type="text" placeholder="Maria da Silva" id="nome">
+        </div>
+        <div class="item">
+            <h6>Sexo</h6>
+            <input type="radio" name="sexo" value="masculino" id="m"> Masculino
+            <input type="radio" name="sexo" value="feminino" id="f"> Feminino
+            <input type="radio" name="sexo" value="outro" id="o"> Outro
+        </div>
+        <div class="item">
+                <h6>Telefone</h6>
+                <input type="text" placeholder="(15) 9 9876-6789" id="telefone">
+            </div>
+        <button class="button-primary" id="SaveCadastro" onclick="cadastrar()">Salvar</button>
     </div>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/common.js"></script>

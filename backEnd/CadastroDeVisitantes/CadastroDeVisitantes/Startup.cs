@@ -16,6 +16,7 @@ namespace CadastroDeVisitantes
     {
         public void Configuration(IAppBuilder app)
         {
+            LinqToDB.Common.Configuration.Linq.AllowMultipleQuery = true;
             HttpConfiguration config = new HttpConfiguration();
             app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             config.Routes.MapHttpRoute(

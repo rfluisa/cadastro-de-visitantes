@@ -12,28 +12,32 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
-    
-    <title>Controle de Visitantes - Entrar</title>
+    <title>Controle de Visitantes - Histórico</title>
 </head>
-<body onload="Logout()" onunload="Logout()">
+<body onload="checkAuth()">
     <nav>
         <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
         <ul class="links">
-            <li><a href="index.html">Home</a></li><!--Início-->
-            <li><a href="historicoVisitas.html">Histórico</a></li><!--Historico---->
-            <li><a href="registro.html">Registrar</a></li><!--Historico---->
-            <li><a href="#">Sair</a></li><!--Sair-->
+                <li><a href="index.html">Home</a></li><!--Início-->
+                <li><a href="historicoVisitas.html">Histórico</a></li><!--Historico---->
+                <li><a href="registro.html">Registrar</a></li><!--Historico---->
+                <li><a href="#">Sair</a></li><!--Sair-->
         </ul>
     </nav>
-    <h1>Controle de Visitantes</h1>
-    <div class="form">
-        <div class="item" id="tipo">
-            <label for="tipoUsuario">Tipo</label>
-            <select id="tipoUsuario">
-                <option value="administrador">Administrador</option>
-                <option value="funcionario">Funcionário</option>
-            </select>
-        </div>
+    <h1>Controle de Usuários</h1>
+    <button id="updateUsers" class="button-primary left-button" onclick="LerUsuarios()">Reload usuários</button>
+    <table class="tabelaUsuarios">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody id="bodyUsers">
+        </tbody>
+    </table>
+
+    <div class="form usuarios">
         <div class="item">
             <label for="username">Usuário</label>
             <input type="text" placeholder="Usuário" id="username">
@@ -42,10 +46,13 @@
             <label for="pwd">Senha</label>
             <input type="password" placeholder="Senha" id="pwd">
         </div>
-        <button class="button-primary" id="Save" onclick="Login()">Entrar</button>
+        <br>
+        <button id="NovoUsuario" class="button-primary">Novo Usuário</button>
+        <button onclick="MudarSenharUsuario()" class="button-primary">Atualizar</button>
+        <button onclick="DeletarUsuario()" class="button-primary">Deletar</button>
     
     </div>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/usuarios.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>

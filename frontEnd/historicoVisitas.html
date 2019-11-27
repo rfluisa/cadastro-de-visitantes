@@ -9,15 +9,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/solid.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/fontawesome.css">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
     <title>Controle de Visitantes - Histórico</title>
 </head>
-<body onload="checkAuth()" onunload="Logout()">
-<!--<body>-->
+<body onload="load()">
     <nav>
         <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
         <ul class="links">
@@ -27,11 +24,27 @@
                 <li><a href="#">Sair</a></li><!--Sair-->
         </ul>
     </nav>
-    <h1>Estatísticas</h1>
-    <div id="pieChartVisitas"></div>
-    <div id="lineChartVisitasHora"></div>
-</body>
-    <script type="text/javascript" src="js/styles.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <h1>Histórico de Visitantes</h1>
+        <div class="center-them">
+            <button id="updateHistorico" class="button-primary left-button" onclick="updateUsers()">Reload Histórico</button>
+            <a class="help" href="dashboard.html"><button id="dashboard" class="button-primary left-button">Dashboard</button></a>
+        </div>
+        <table class="tabelaHistorico">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Placa</th>
+                    <th>Entrada</th>
+                    <th>Saída</th>
+                    <th>Setor</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="bodyHistory">
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" src="js/historico.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
+</body>
 </html>

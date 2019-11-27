@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/solid.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/fontawesome.css">
     <link rel="stylesheet" href="css/style.css">
-    
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    
     <title>Controle de Visitantes - Histórico</title>
 </head>
-<body onload="checkAuth()" onunload="Logout()">
+<body onload="checkAuth()">
     <nav>
         <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
         <ul class="links">
@@ -24,35 +26,8 @@
                 <li><a href="#">Sair</a></li><!--Sair-->
         </ul>
     </nav>
-    <h1>Controle de Usuários</h1>
-    <button id="updateUsers" class="button-primary left-button" onclick="LerUsuarios()">Reload usuários</button>
-    <table class="tabelaUsuarios">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Tipo</th>
-            </tr>
-        </thead>
-        <tbody id="bodyUsers">
-        </tbody>
-    </table>
-
-    <div class="form usuarios">
-        <div class="item">
-            <label for="username">Usuário</label>
-            <input type="text" placeholder="Usuário" id="username">
-        </div>
-        <div class="item">
-            <label for="pwd">Senha</label>
-            <input type="password" placeholder="Senha" id="pwd">
-        </div>
-        <br>
-        <button id="NovoUsuario" class="button-primary">Novo Usuário</button>
-        <button onclick="MudarSenharUsuario()" class="button-primary">Atualizar</button>
-        <button onclick="DeletarUsuario()" class="button-primary">Deletar</button>
-    
-    </div>
-    <script type="text/javascript" src="js/usuarios.js"></script>
+    <h1>Controle de Visitantes</h1>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>
