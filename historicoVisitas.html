@@ -18,40 +18,30 @@
     <nav>
         <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
         <ul class="links">
-            <li><a href="index.html">Home</a></li><!--Início-->
-            <li><a href="historico.html">Histórico</a></li><!--Historico---->
-            <li><a href="#">Sair</a></li><!--Sair-->
+                <li><a href="index.html">Home</a></li><!--Início-->
+                <li><a href="historicoVisitas.html">Histórico</a></li><!--Historico---->
+                <li><a href="registro.html">Registrar</a></li><!--Historico---->
+                <li><a href="#">Sair</a></li><!--Sair-->
         </ul>
     </nav>
-    <h1>Usuários</h1>
-    <div>
-        <button id="updateUsers" onclick="updateUsers()">Reload usuários</button>
-        <table class="tabelaUsuarios">
+    <h1>Histórico de Visitantes</h1>
+        <div class="center-them">
+            <button id="updateHistorico" class="button-primary left-button" onclick="updateUsers()">Reload Histórico</button>
+            <a class="help" href="dashboard.html"><button id="dashboard" class="button-primary left-button">Dashboard</button></a>
+        </div>
+        <table class="tabelaHistorico">
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Tipo</th>
+                    <th>Placa</th>
+                    <th>Entrada</th>
+                    <th>Saída</th>
+                    <th>Status</th>
                 </tr>
             </thead>
-            <tbody id="bodyUsers">
+            <tbody id="bodyHistory">
             </tbody>
         </table>
-    </div>
-
-    <div class="form usuarios">
-        <div class="item">
-            <label for="username">Usuário</label>
-            <input type="text" placeholder="Usuário" id="username">
-        </div>
-        <div class="item">
-            <label for="pwd">Senha</label>
-            <input type="password" placeholder="Senha" id="pwd">
-        </div>
-        <br>
-        <button id="NovoUsuario" class="button-primary">Novo Usuário</button>
-        <button onclick="changePassword()" class="button-primary">Atualizar</button>
-        <button onclick="deleteUser()" class="button-primary">Deletar</button>
-    
     </div>
     <script type="text/javascript" src="js/index.js"></script>
 </body>

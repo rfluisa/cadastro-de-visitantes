@@ -1431,6 +1431,7 @@ body {
 
 nav {
   height: 5rem;
+  z-index: 5;
   background-color: white;
   display: flex;
   position: fixed;
@@ -1446,6 +1447,20 @@ nav {
     nav .links a {
       display: block;
       padding: 1rem; }
+
+.left-button {
+  width: 20vw;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; }
+
+.center-them {
+  margin: 0 auto;
+  position: relative;
+  display: flex; }
+
+.help {
+  margin-left: 2rem; }
 
 h1 {
   padding: 10rem 0rem 2.5rem 0rem;
@@ -1467,24 +1482,35 @@ h1 {
     width: 100%;
     margin: 0.3rem 0.3rem 0.3rem 0rem; }
 
-.form.usuarios, #updateUsers {
-  margin-left: 10%; }
-
-.tabelaUsuarios {
+.tabelaUsuarios, .tabelaHistorico {
   margin: 0 auto;
   position: relative;
   background-color: rgba(0, 0, 0, 0.15);
   width: 80%;
   margin-top: 2.5rem;
   padding: 2rem;
-  margin-bottom: 2rem; }
-  .tabelaUsuarios th, .tabelaUsuarios td {
+  margin-bottom: 2rem;
+  text-align: center; }
+  .tabelaUsuarios th, .tabelaUsuarios td, .tabelaHistorico th, .tabelaHistorico td {
     display: inline-block;
     padding: 1rem;
-    text-align: center;
-    width: 50%; }
+    text-align: center; }
 
-.locais {
+.tabelaUsuarios th, .tabelaUsuarios td {
+  width: 50%; }
+
+.tabelaHistorico th, .tabelaHistorico td {
+  width: 20%; }
+
+.locais, #novo-veiculo-toggle, .veiculos, .setores, .saveReg {
   display: none; }
+
+#pieChartVisitas {
+  min-width: 50vw;
+  height: 100vh;
+  max-width: 100vw;
+  margin: 0 auto;
+  margin-top: 6rem;
+  position: relative; }
 
 /*# sourceMappingURL=style.css.map */

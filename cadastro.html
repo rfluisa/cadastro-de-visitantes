@@ -18,32 +18,30 @@
     <nav>
         <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
         <ul class="links">
-            <li><a href="index.html">Home</a></li><!--Início-->
-            <li><a href="historico.html">Histórico</a></li><!--Historico---->
-            <li><a href="#">Sair</a></li><!--Sair-->
+                <li><a href="index.html">Home</a></li><!--Início-->
+                <li><a href="historicoVisitas.html">Histórico</a></li><!--Historico---->
+                <li><a href="registro.html">Registrar</a></li><!--Historico---->
+                <li><a href="#">Sair</a></li><!--Sair-->
         </ul>
     </nav>
     <h1>Cadastro</h1>
     <div class="form">
         <div class="item">
-                <input type="radio" name="cpf-cnpj" value="CPF" id="cpfBool">CPF
-                <input type="radio" name="cpf-cnpj" value="CNPJ"> CNPJ
-                <br>
+                <h6>CPF</h6>
                 <input type="text" placeholder="000.000.000-00" id="cpf-cnpj">
         </div>
         <div class="item">
-            <label for="nome">Nome</label><br><!--Nome-->
+            <h6>Nome</h6>
             <input type="text" placeholder="Maria da Silva" id="nome">
         </div>
         <div class="item">
-            <label for="sexo">Sexo</label><!--sexo-->
-            <br>
+            <h6>Sexo</h6>
             <input type="radio" name="sexo" value="masculino" id="m"> Masculino
             <input type="radio" name="sexo" value="feminino" id="f"> Feminino
             <input type="radio" name="sexo" value="outro" id="o"> Outro
         </div>
         <div class="item">
-                <label for="telefone">Telefone</label><br><!--Phone-->
+                <h6>Telefone</h6>
                 <input type="text" placeholder="(15) 9 9876-6789" id="telefone">
             </div>
         <button class="button-primary" id="SaveCadastro" onclick="cadastrar()">Salvar</button>

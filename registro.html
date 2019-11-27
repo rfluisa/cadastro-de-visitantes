@@ -18,12 +18,13 @@
         <nav>
                 <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
                 <ul class="links">
-                        <li><a href="index.html">Home</a></li><!--Início-->
-                        <li><a href="historico.html">Histórico</a></li><!--Historico---->
-                        <li><a href="#">Sair</a></li><!--Sair-->
+                                <li><a href="index.html">Home</a></li><!--Início-->
+                                <li><a href="historicoVisitas.html">Histórico</a></li><!--Historico---->
+                                <li><a href="registro.html">Registrar</a></li><!--Historico---->
+                                <li><a href="#">Sair</a></li><!--Sair-->
                 </ul>
         </nav>
-        <h1>Registro</h1>
+        <h1>Registro de Visita</h1>
         <div class="form">
                 <div class="cpf item">
                         <h6>CPF</h6>
@@ -35,10 +36,20 @@
                 </div>
                 <div class="veiculos item">
                         <h6>Veículos</h6>
-                        <select id="veiculos">
+                        <select id="veiculos" onChange="toggleVeiculoNovo()">
                                 <option disabled selected value> -- Selecione uma opção -- </option>
                                 <option value="novo-carro">Novo</option>
                         </select>
+                        <div id="novo-veiculo-toggle">
+                                <h6>Marca</h6>
+                                <input type="text" placeholder="Hyundai" id="marca">
+                                <h6>Modelo</h6>
+                                <input type="text" placeholder="HB20" id="modelo">
+                                <h6>Placa</h6>
+                                <input type="text" placeholder="ABC-0303" id="placa">
+                                <h6>Ano</h6>
+                                <input type="text" placeholder="2005" id="ano">
+                        </div>
                 </div>
                 <div class="setores item">
                         <h6>Setores</h6>
@@ -126,30 +137,23 @@
                                 <option value="Slipcenet">Splicenet</option>
                         </select>
                         <select id="setores-L" class="locais">
-                                        <option value="CantinaL">Cantina</option>
-                                        <option value="LabArquitetura">Laboratório de Arquitetura</option>
-                                        <option value="LabCivilL">Laboratório de Civil</option>
-                                        <option value="LabManufatura">Laboratório de Manofatura Avançada 4.0</option>
-                                        <option value="LabMecanica">Laboratório de Mecânica</option>
+                                <option value="CantinaL">Cantina</option>
+                                <option value="LabArquitetura">Laboratório de Arquitetura</option>
+                                <option value="LabCivilL">Laboratório de Civil</option>
+                                <option value="LabManufatura">Laboratório de Manofatura Avançada 4.0</option>
+                                <option value="LabMecanica">Laboratório de Mecânica</option>
                         </select>
                         <select id="setores-M" class="locais">
-                                        <option value="CampoFutebol">Campo Oficial de Futebol</option>
-                                        <option value="FarmLab">FARM LAB</option>
-                                        <option value="Refeitorio">Refeitório</option>
-                                        <option value="Outros">Outros</option>
+                                <option value="CampoFutebol">Campo Oficial de Futebol</option>
+                                <option value="FarmLab">FARM LAB</option>
+                                <option value="Refeitorio">Refeitório</option>
+                                <option value="Outros">Outros</option>
                         </select>
                 </div>
-                <button id="Save" onclick="registrar()" class="button-primary">Salvar</button>
+                <button id="cadastrarBotaoRegistro" class="button-primary">Cadastrar</button>
+                <button id="Save" onclick="registrar()" class="button-primary saveReg">Salvar</button>
                 <script type="text/javascript" src="js/index.js"></script>
         </div>
 </body>
 <script type="text/javascript" src="js/styles.js"></script>
-<script>
-        document.getElementById("Save").addEventListener('click',function ()
-        {
-            $.post("ajax/test.html", function() {
-            $( ".result" ).html();
-            });  
-        });
-</script>
 </html>
