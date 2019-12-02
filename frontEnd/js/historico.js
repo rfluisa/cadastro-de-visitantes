@@ -1,5 +1,5 @@
 function load(){
-    CommonPost("historico", {}, function (data) {
+    CommonPost("visita/historico", {}, function (data) {
         var html = '';
         $("#bodyHistory").html(html);
         for (e in data) {

@@ -31,8 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="linq2db, Version=2.9.0.0, Culture=neutral, PublicKeyToken=e41013125f9e410a, processorArchitecture=MSIL">
+      <HintPath>..\packages\linq2db.2.9.0\lib\net46\linq2db.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,7 +46,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Criptografia.cs" />
+    <Compile Include="LoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioService.cs" />
+    <Compile Include="VisitaService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CadastroDeVisitantes.Common\CadastroDeVisitantes.Common.csproj">
+      <Project>{E2015BBE-2006-459B-9FAF-C8C6A7D083AF}</Project>
+      <Name>CadastroDeVisitantes.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

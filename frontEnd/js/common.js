@@ -5,7 +5,7 @@ function CommonPost(metodo, json, callback) {
             withCredentials: true
         }
     });
-    $.post("https://localhost:44337/api/values/" + metodo, json,callback);
+    $.post("https://localhost:44337/api/" + metodo, json,callback);
 }
 
 function checkAuth(){
@@ -17,6 +17,6 @@ function checkAuth(){
 
 function Logout() {
     localStorage.setItem("isLogged", 0);
-    CommonPost("logout", {}, function () {
+    CommonPost("login/logout", {}, function () {
     });
 }

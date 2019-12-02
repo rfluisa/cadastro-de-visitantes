@@ -1,5 +1,5 @@
 function LerUsuarios() {
-    CommonPost("readusuarios", {}, function (data) {
+    CommonPost("usuario/readusuarios", {}, function (data) {
         var html = '';
         $("#bodyUsers").html(html);
         for (e in data) {
@@ -17,7 +17,7 @@ function MudarSenharUsuario() {
             "senha": $('#pwd').val()
         }
 
-    CommonPost("updateUsuario", parametros, function (data) {
+    CommonPost("usuario/updateUsuario", parametros, function (data) {
 
     });
 
@@ -30,7 +30,7 @@ function DeletarUsuario() {
             "senha": $('#pwd').val()
         }
 
-    CommonPost("deleteUsuario", parametros, function (data) {
+    CommonPost("usuario/deleteUsuario", parametros, function (data) {
 
     });
 }

@@ -9,7 +9,7 @@ function Cadastrar() {
             "sexoO": $('#o').val(),
             "telefone": $('#telefone').val()
         }
-    CommonPost("cadastro", parametros, function (data) {
+    CommonPost("visita/cadastro", parametros, function (data) {
 
     });
 }

@@ -7,7 +7,7 @@ function CadastrarUsuario() {
 
         }
         
-    CommonPost("cadastrousuario", parametros, function (data) {
+    CommonPost("usuario/CadastroUsuario", parametros, function (data) {
 
     });
 }
