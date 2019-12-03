@@ -16,7 +16,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Controle de Visitantes - Histórico</title>
 </head>
-<body onload="checkAuth()">
+<!--<body onload="checkAuth()" onunload="Logout()">-->
+<body>
     <nav>
         <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
         <ul class="links">
@@ -26,8 +27,11 @@
                 <li><a href="#">Sair</a></li><!--Sair-->
         </ul>
     </nav>
-    <h1>Controle de Visitantes</h1>
+    <h1>Estatísticas</h1>
+    <div id="pieChartVisitas"></div>
+    <div id="lineChartVisitasHora"></div>
+</body>
+    <script type="text/javascript" src="js/styles.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
-</body>
 </html>
