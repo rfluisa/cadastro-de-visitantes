@@ -23,7 +23,7 @@ function checkCpf() {
         if (data == null)
             window.location = "cadastropessoa.html";
         else {
-            var els = document.querySelectorAll("[id='cpf-true']");
+            var els = document.getElementsByClassName("cpf-true");
 
             for(var i = 0; i < els.length; i++) 
                 els[i].style.display = 'block'; 

@@ -30,13 +30,13 @@
                 <h6>CPF</h6>
                 <input type="text" placeholder="000.000.000-00" id="Cpfinfo"><!--Info vem do back-->
             </div>
-            <div class="nome item" id="cpf-true">
+            <div class="nome item cpf-true">
                 <h6>Nome</h6>
                 <p id="info"></p><!--Nome vem do back-->
             </div>
             <div class="veiculos item">
-                <h6 id="cpf-true">Veículos</h6>
-                <select id="veiculos" id="cpf-true" onChange="toggleVeiculoNovo()">
+                <h6 class="cpf-true">Veículos</h6>
+                <select id="veiculos" class="cpf-true" onChange="toggleVeiculoNovo()">
                     <option disabled selected value> -- Selecione uma opção -- </option>
                     <option value="novo-carro">Novo</option>
                 </select>
@@ -52,8 +52,8 @@
                 </div>
             </div>
             <div class="setores item">
-                <h6 id="cpf-true">Setores</h6>
-                <select id="predios" id="cpf-true" onChange="toggleSetores()">
+                <h6 class="cpf-true">Setores</h6>
+                <select id="predios" class="cpf-true" onChange="toggleSetores()">
                     <option disabled selected value> -- Selecione uma opção -- </option>
                     <option value="predio-A">Prédio A</option>
                     <option value="predio-B">Prédio B</option>
@@ -151,7 +151,7 @@
                 </select>
             </div>
             <button id="pesquisarCPF" onclick="checkCpf()" class="button-primary">Pesquisar</button>
-            <button id="registrarVisita" onclick="registrar()" id="cpf-true" class="button-primary saveReg">Registrar Visitante</button>
+            <button id="registrarVisita" onclick="registrar()" class="button-primary saveReg cpf-true">Registrar Visitante</button>
             <script type="text/javascript" src="js/common.js"></script>
             <script type="text/javascript" src="js/cadastrarVisita.js"></script>
         </div>
