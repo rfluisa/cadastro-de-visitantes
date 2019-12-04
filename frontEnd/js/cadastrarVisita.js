@@ -18,17 +18,23 @@ function checkCpf() {
             "cpf": $('#Cpfinfo').val()
         }
 
+        if (1 === 0)
+        window.location = "cadastropessoa.html";
+    else {
+        document.getElementById("cpf-true").style.display = "block";
+        document.getElementById("cpf-true1").style.display = "block";
+        document.getElementById("tituloSetor").style.display = "block";
+        document.getElementById("predios").style.display = "block";
+        document.getElementById("registrarVisita").style.display = "block";
+
+        /*for(var i = 1; i <= 6; i++){
+            document.getElementById(("cpf-true"+i)).style.display = "block";
+        }//document.getElementById("cpf-true").style.display = "block";*/
+        document.getElementById("pesquisarCPF").style.display = "none";
+    }
+
     CommonPost("visita/TestarPessoa", parametros, function (data) {
         debugger;
-        if (data == null)
-            window.location = "cadastropessoa.html";
-        else {
-            document.getElementById("cpf-true").style.display = "block";
-
-            for(var i = 1; i <= 6; i++) 
-            document.getElementById(("cpf-true"+i)).style.display = "block";
-            //document.getElementById("cpf-true").style.display = "block";
-            document.getElementById("cpfPesquisar").style.display = "none";
-        }
+        
     });
 }

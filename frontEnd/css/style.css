@@ -1505,10 +1505,10 @@ h1 {
 .tabelaHistorico th, .tabelaHistorico td {
   width: 16.65%; }
 
-.nome, .veiculos, .setores, .saveReg {
+.nome, .veiculos, #predios, #tituloSetor, .saveReg {
   display: none; }
 
-.locais, #novo-veiculo-toggle {
+.locais, #novo-veiculo-toggle, #registrarVisita {
   display: none; }
 
 #pieChartVisitas, #lineChartVisitasHora {
