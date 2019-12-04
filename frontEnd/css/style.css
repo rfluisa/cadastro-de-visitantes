@@ -1506,7 +1506,7 @@ h1 {
   width: 16.65%; }
 
 .locais, #novo-veiculo-toggle, .veiculos, .setores, .saveReg {
-  display: none; }
+  display: block; }
 
 #pieChartVisitas, #lineChartVisitasHora {
   min-width: 100vw;
