@@ -14,13 +14,13 @@
     
     <title>Controle de Visitantes - Cadastro</title>
 </head>
-<!--<body onload="checkAuth()">-->
-<body>
+<body onload="load()">
     <nav>
         <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
         <ul class="links">
             <li><a href="historicoVisitas.html">Histórico</a></li><!--Historico-->
             <li><a href="cadastrovisita.html">Registrar Visitante</a></li><!--Registro Visitante-->
+            <li><a href="cadastrousuario.html">Registrar Usuario</a></li><!--Registro Usuario-->
             <li><a href="index.html">Sair</a></li><!--Sair-->
         </ul>
     </nav>
@@ -44,7 +44,7 @@
                 <h6>Telefone</h6>
                 <input type="text" placeholder="(15) 9 9876-6789" id="telefone">
             </div>
-        <button class="button-primary" id="SaveCadastro" onclick="Cadastrar()">Salvar</button>
+        <button class="button-primary" id="SaveCadastro" onclick="CadastrarPessoa()">Salvar</button>
     </div>
     <script type="text/javascript" src="js/cadastrarVisita.js"></script>
     <script type="text/javascript" src="js/common.js"></script>

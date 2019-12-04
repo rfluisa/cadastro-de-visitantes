@@ -1,5 +1,4 @@
-function Cadastrar() {
-    debugger;
+function CadastrarPessoa() {
     parametros =
         {
             "Cpf": $('#cpf-cnpj').val(),
@@ -12,29 +11,53 @@ function Cadastrar() {
     });
 }
 
+function CadastrarVisita() {
+    debugger;
+    parametros =
+        {
+            "CPF": $('#Cpfinfo').val(),
+            "Placa": ($('#placa').val() == "") ? $('#veiculos').val() : $('#placa').val(),
+            "NomeSetor": $('#predios').val(),
+            "Ano": $('#ano').val(),
+            "Marca": $('#marca').val(),
+            "Modelo": $('#modelo').val()
+        }
+    CommonPost("visita/visita", parametros, function (data) {
+
+    });
+}
+
 function checkCpf() {
     parametros =
         {
             "cpf": $('#Cpfinfo').val()
         }
 
-        if (1 === 0)
-        window.location = "cadastropessoa.html";
-    else {
-        document.getElementById("cpf-true").style.display = "block";
-        document.getElementById("cpf-true1").style.display = "block";
-        document.getElementById("tituloSetor").style.display = "block";
-        document.getElementById("predios").style.display = "block";
-        document.getElementById("registrarVisita").style.display = "block";
 
-        /*for(var i = 1; i <= 6; i++){
-            document.getElementById(("cpf-true"+i)).style.display = "block";
-        }//document.getElementById("cpf-true").style.display = "block";*/
-        document.getElementById("pesquisarCPF").style.display = "none";
-    }
 
     CommonPost("visita/TestarPessoa", parametros, function (data) {
-        debugger;
-        
+        if (data == null)
+            window.location = "cadastropessoa.html";
+        else {
+            $("#info").html(data.Nome);
+
+            for (i = 0; i < data.Veiculospessoas.length; i++) {
+                $("#veiculos").append('<option value="' + data.Veiculospessoas[i].VEICULOSVEICULO.Placa + '"> ' + data.Veiculospessoas[i].VEICULOSVEICULO.Placa + ' </option >')
+            }
+
+            document.getElementById("cpf-true").style.display = "block";
+            document.getElementById("info").style.display = "block";
+            document.getElementById("cpf-true1").style.display = "block";
+            document.getElementById("tituloSetor").style.display = "block";
+            document.getElementById("predios").style.display = "block";
+            document.getElementById("registrarVisita").style.display = "block";
+            document.getElementById("pesquisarCPF").style.display = "none";
+        }
+
     });
+}
+
+function load() {
+    checkAuth();
+    $('#Cpfinfo').val(sessionStorage.getItem("cpf"));
 }

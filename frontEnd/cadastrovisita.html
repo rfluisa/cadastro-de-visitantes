@@ -14,13 +14,13 @@
 
         <title>Controle de Visitantes - Registro</title>
 </head>
-<!--<body onload="checkAuth()">-->
-<body>
+<body onload="load()">
         <nav>
             <div><img src="img/facens.png" alt="logo"><!--Logo--></div>
             <ul class="links">
                 <li><a href="historicoVisitas.html">Histórico</a></li><!--Historico-->
                 <li><a href="cadastrovisita.html">Registrar Visitante</a></li><!--Registro Visitante-->
+                <li><a href="cadastrousuario.html">Registrar Usuario</a></li><!--Registro Usuario-->
                 <li><a href="index.html">Sair</a></li><!--Sair-->
             </ul>
         </nav>
@@ -55,19 +55,19 @@
                 <h6 id="tituloSetor">Setores</h6>
                 <select id="predios" id="cpf-true4" onChange="toggleSetores()">
                     <option disabled selected value> -- Selecione uma opção -- </option>
-                    <option value="predio-A">Prédio A</option>
-                    <option value="predio-B">Prédio B</option>
-                    <option value="predio-C">Prédio C</option>
-                    <option value="predio-D">Prédio D</option>
-                    <option value="predio-E">Prédio E</option>
-                    <option value="predio-F">Prédio F</option>
-                    <option value="predio-G">Prédio G</option>
-                    <option value="predio-H">Prédio H</option>
-                    <option value="predio-I">Prédio I</option>
-                    <option value="predio-J">Prédio J</option>
-                    <option value="predio-K">Prédio K</option>
-                    <option value="predio-L">Prédio L</option>
-                    <option value="predio-M">Outros</option>
+                    <option value="A">Prédio A</option>
+                    <option value="B">Prédio B</option>
+                    <option value="C">Prédio C</option>
+                    <option value="D">Prédio D</option>
+                    <option value="E">Prédio E</option>
+                    <option value="F">Prédio F</option>
+                    <option value="G">Prédio G</option>
+                    <option value="H">Prédio H</option>
+                    <option value="I">Prédio I</option>
+                    <option value="J">Prédio J</option>
+                    <option value="K">Prédio K</option>
+                    <option value="L">Prédio L</option>
+                    <option value="M">Outros</option>
                 </select>
                 <select id="setores-A" class="locais">
                     <option value="FACE">FACE</option>
@@ -151,7 +151,7 @@
                 </select>
             </div>
             <button id="pesquisarCPF" onclick="checkCpf()" class="button-primary">Pesquisar</button>
-            <button id="registrarVisita" onclick="registrar()" id="cpf-true5" class="button-primary saveReg">Registrar Visitante</button>
+            <button id="registrarVisita" onclick="CadastrarVisita()" id="cpf-true5" class="button-primary saveReg">Registrar Visitante</button>
             <script type="text/javascript" src="js/common.js"></script>
             <script type="text/javascript" src="js/cadastrarVisita.js"></script>
         </div>

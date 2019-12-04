@@ -19,7 +19,7 @@ namespace DataModels
 	/// <summary>
 	/// Database       : CadastroDeVisitantes
 	/// Data Source    : tcp:cadastrodevisitantes.database.windows.net,1433
-	/// Server Version : 12.00.1900
+	/// Server Version : 12.00.2000
 	/// </summary>
 	public partial class CadastroDeVisitantesDB : LinqToDB.Data.DataConnection
 	{
@@ -188,11 +188,11 @@ namespace DataModels
 	[Table(Schema="dbo", Name="Visita")]
 	public partial class Visita
 	{
-		[PrimaryKey(1), NotNull    ] public int      IDPessoa    { get; set; } // int
-		[PrimaryKey(2), NotNull    ] public int      IDSetor     { get; set; } // int
-		[Column,        NotNull    ] public DateTime DataEntrada { get; set; } // datetime
-		[Column,        NotNull    ] public DateTime DataSaida   { get; set; } // datetime
-		[Column,           Nullable] public int?     IDVeiculo   { get; set; } // int
+		[Column, NotNull    ] public int       IDPessoa    { get; set; } // int
+		[Column, NotNull    ] public int       IDSetor     { get; set; } // int
+		[Column, NotNull    ] public DateTime  DataEntrada { get; set; } // datetime
+		[Column,    Nullable] public DateTime? DataSaida   { get; set; } // datetime
+		[Column,    Nullable] public int?      IDVeiculo   { get; set; } // int
 
 		#region Associations
 
@@ -254,13 +254,6 @@ namespace DataModels
 			return table.FirstOrDefault(t =>
 				t.IDVeiculo == IDVeiculo &&
 				t.IDPessoa  == IDPessoa);
-		}
-
-		public static Visita Find(this ITable<Visita> table, int IDPessoa, int IDSetor)
-		{
-			return table.FirstOrDefault(t =>
-				t.IDPessoa == IDPessoa &&
-				t.IDSetor  == IDSetor);
 		}
 	}
 }

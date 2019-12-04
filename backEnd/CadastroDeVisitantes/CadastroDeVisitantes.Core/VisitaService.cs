@@ -15,6 +15,7 @@ namespace CadastroDeVisitantes.Core
             using (var db = new CadastroDeVisitantesDB())
             {
                 pessoa.CPF = pessoa.CPF.Replace(".", "");
+                pessoa.CPF = pessoa.CPF.Replace("-", "");
                 db.InsertWithIdentity(pessoa);
                 return true;
             }
@@ -26,10 +27,33 @@ namespace CadastroDeVisitantes.Core
             {
                 var idPessoa = db.Pessoas.FirstOrDefault(p => p.CPF == cpf).IDPessoa;
                 var idVeiculo = db.Veiculoes.FirstOrDefault(v => v.Placa == placa).IDVeiculo;
-                var idSetor = db.Setors.FirstOrDefault(s => s.Nome == nomeSetor).IDSetor;
+                var setor = db.Setors.FirstOrDefault(s => s.Nome == nomeSetor);
+                var idSetor = 0;
+                if (setor == null)
+                {
+                    db.InsertWithIdentity(new Setor()
+                    {
+                        Nome = nomeSetor
+                    });
+                    idSetor = db.Setors.ToList().Last().IDSetor;
+                }
+
+                var veiculopessoa = db.VeiculoPessoas.FirstOrDefault(v => v.IDPessoa == idPessoa && v.IDVeiculo == idVeiculo);
+                if (veiculopessoa == null)
+                {
+                    veiculopessoa = new VeiculoPessoa()
+                    {
+                        IDPessoa = idPessoa,
+                        IDVeiculo = idVeiculo,
+                    };
+
+                    db.InsertWithIdentity(veiculopessoa);
+                }
+
                 var visit = new Visita()
                 {
                     DataEntrada = DateTime.Now,
+                    DataSaida = null,
                     IDPessoa = idPessoa,
                     IDVeiculo = idVeiculo,
                     IDSetor = idSetor
@@ -46,6 +70,7 @@ namespace CadastroDeVisitantes.Core
             {
                 return (from p in db.Pessoas
                           .LoadWith(v => v.Veiculospessoas)
+                          .LoadWith(c => c.Veiculospessoas.ElementAtOrDefault(0).VEICULOSVEICULO)
                         select p).FirstOrDefault(pe => pe.CPF == cpf);
             }
         }
@@ -54,6 +79,8 @@ namespace CadastroDeVisitantes.Core
         {
             using (var db = new CadastroDeVisitantesDB())
             {
+                if (db.Veiculoes.FirstOrDefault(v => v.Placa == veiculo.Placa) != null)
+                    return true;
                 var carrodb = db.Carroes.FirstOrDefault(c => c.Marca == carro.Marca && c.Modelo == carro.Modelo);
                 if (carrodb == null)
                 {
@@ -90,8 +117,8 @@ namespace CadastroDeVisitantes.Core
             {
                 return (from v in db.Visitas
                                .LoadWith(s => s.VISITASETOR)
-                               orderby v.VISITASETOR.Nome
-                               select v).ToList();
+                        orderby v.VISITASETOR.Nome
+                        select v).ToList();
             }
         }
     }

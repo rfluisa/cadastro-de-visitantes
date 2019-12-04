@@ -197,7 +197,6 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\VisitaController.cs" />
     <Compile Include="Models\CadastroPessoaViewModel.cs" />
     <Compile Include="Models\CadastroVeiculoViewModel.cs" />

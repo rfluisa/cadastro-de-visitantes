@@ -59,6 +59,17 @@ namespace CadastroDeVisitantes.Controllers
         {
             try
             {
+                VisitaService.CadastrarVeiculo(
+                    new Carro
+                    {
+                        Marca = visita.Marca,
+                        Modelo = visita.Modelo
+                    },
+                    new Veiculo
+                    {
+                        Ano = visita.Ano,
+                        Placa = visita.Placa
+                    });
                 return VisitaService.CadastrarVisita(visita.CPF, visita.Placa, visita.NomeSetor);
             }
             catch (Exception ex)
