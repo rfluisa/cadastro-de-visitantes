@@ -23,10 +23,10 @@ function checkCpf() {
         if (data == null)
             window.location = "cadastropessoa.html";
         else {
-            var els = document.getElementsByClassName("cpf-true");
+            document.getElementById("cpf-true").style.display = "block";
 
-            for(var i = 0; i < els.length; i++) 
-                els[i].style.display = 'block'; 
+            for(var i = 1; i <= 6; i++) 
+            document.getElementById(("cpf-true"+i)).style.display = "block";
             //document.getElementById("cpf-true").style.display = "block";
             document.getElementById("cpfPesquisar").style.display = "none";
         }
