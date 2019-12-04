@@ -23,7 +23,8 @@ function checkCpf() {
         if (data == null)
             window.location = "cadastropessoa.html";
         else {
-
+            document.getElementById("cpf-true").style.display = "block";
+            document.getElementById("cpfPesquisar").style.display = "none";
         }
     });
 }
