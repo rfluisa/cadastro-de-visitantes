@@ -7,10 +7,10 @@ Telefone varchar(30) not null,
 );
 
 create table Visita(
-IDPessoa int not null,
-IDSetor int not null,
+IDPessoa int  null,
+IDSetor int  null,
 DataEntrada datetime not null,
-DataSaida datetime not null,
+DataSaida datetime  null,
 IDVeiculo int null
 );
 
@@ -21,8 +21,8 @@ Descricao varchar(300) null,
 );
 
 create table VeiculoPessoa(
-IDVeiculo int not null,
-IDPessoa int not null,
+IDVeiculo int null,
+IDPessoa int null,
 );
 
 create table Veiculo(
@@ -60,8 +60,6 @@ alter table Pessoa add constraint PK_PESSOA primary key(IDPessoa);
 alter table Setor add constraint PK_SETOR primary key(IDSetor);
 alter table Veiculo add constraint PK_VEICULO primary key (IDVeiculo);
 alter table Carro add constraint PK_CARRO primary key (IDCarro);
-alter table Visita add constraint PK_VISITA primary key(IDPessoa,IDSetor);
-alter table VeiculoPessoa add constraint PK_VEICULOS primary key (IDVeiculo,IDPessoa);
 alter table Usuario add constraint PK_USUARIO primary key (IDUsuario);
 
 
