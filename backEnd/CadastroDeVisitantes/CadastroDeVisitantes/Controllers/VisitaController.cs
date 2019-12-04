@@ -41,25 +41,25 @@ namespace CadastroDeVisitantes.Controllers
 
         [HttpPost]
         [Authorize]
-        public bool Visita(CadastroVisitaViewModel visita)
+        public Pessoa TestarPessoa(ChecarRegistroViewModel registro)
         {
             try
             {
-                return VisitaService.CadastrarVisita(visita.CPF, visita.Placa, visita.NomeSetor);
+                return VisitaService.ConsultarPessoa(registro.CPF);
             }
             catch (Exception ex)
             {
-                return false;
+                return null;
             }
         }
 
         [HttpPost]
         [Authorize]
-        public bool CheckPessoa(string cpf)
+        public bool Visita(CadastroVisitaViewModel visita)
         {
             try
             {
-                return VisitaService.ConsultarPessoa(cpf);
+                return VisitaService.CadastrarVisita(visita.CPF, visita.Placa, visita.NomeSetor);
             }
             catch (Exception ex)
             {

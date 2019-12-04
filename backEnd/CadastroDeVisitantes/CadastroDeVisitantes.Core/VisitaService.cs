@@ -40,15 +40,14 @@ namespace CadastroDeVisitantes.Core
             }
         }
 
-        public static bool ConsultarPessoa(string cpf)
+        public static Pessoa ConsultarPessoa(string cpf)
         {
             using (var db = new CadastroDeVisitantesDB())
             {
-                var pessoa = db.Pessoas.FirstOrDefault(p => p.CPF == cpf);
-                if (pessoa != null)
-                    return true;
+                return (from p in db.Pessoas
+                          .LoadWith(v => v.Veiculospessoas)
+                        select p).FirstOrDefault(pe => pe.CPF == cpf);
             }
-            return false;
         }
 
         public static bool CadastrarVeiculo(Carro carro, Veiculo veiculo)

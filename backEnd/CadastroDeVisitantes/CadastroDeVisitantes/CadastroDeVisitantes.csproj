@@ -201,6 +201,7 @@
     <Compile Include="Controllers\VisitaController.cs" />
     <Compile Include="Models\CadastroPessoaViewModel.cs" />
     <Compile Include="Models\CadastroVeiculoViewModel.cs" />
+    <Compile Include="Models\ChecarRegistroViewModel.cs" />
     <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\HistoricoViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
